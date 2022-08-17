@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include<unistd.h>
+int main()
+{
+ write(1,"hello",5);
+ write(1,"\nhello\n",2); 
+ printf("\n write system call");
+ return 0;
+}

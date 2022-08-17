@@ -1,0 +1,40 @@
+create
+
+#include<stdio.h>
+#include<unistd.h>
+#inxlude<sys/stat.h>
+int main() {
+   int res;
+    res=mkfifo("fifo",0777);
+   
+      printf("Named pipe has been to created\n");
+      
+   }
+write
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int main() {
+  int res;
+res=message("fifo",O_WRONLY);
+write(res,"message",100);
+printf("send process %d send data\n",getpaid());
+}
+
+
+
+Read
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int main() {
+  int res,n
+  char buffer[100];
+res=open("fifo",O_WRONLY);
+n=read(res,buffer,100);
+printf("reader process %d started\n",getpaid());
+printf("reader process %d recived %s\n",getpaid(),buffer);
+}
+
